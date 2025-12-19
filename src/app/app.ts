@@ -1,18 +1,22 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
+import { Child } from './child';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [Child],
   template: `
-  <section (mouseover)="showSecretMessage()">
-    There's a secret message for you,hover to reveral:
-    {{ message }}
-    </section>
+    <app-child (addItemEvent)="addItem($event)" />
+    <p>🐢 all the way down {{ items.length }}</p>
+    <ul>
+      <li *ngFor="let item of items">{{ item }}</li>
+    </ul>
   `,
 })
-export class App{
-  message='';
+export class App {
+  items: string[] = [];
 
-  showSecretMessage(){
-    this.message='Way to go 🚀';
+  addItem(item: string) {
+    this.items.push(item);
   }
 }
