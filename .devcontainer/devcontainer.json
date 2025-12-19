@@ -1,0 +1,17 @@
+{
+  "name": "Angular Docker Dev",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "angular-dev",
+  "workspaceFolder": "/app",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Angular.ng-template",           // Angular公式サポート
+        "esbenp.prettier-vscode",        // コード整形
+        "firsttris.vscode-jest-runner",  // テスト用
+        "mhutchie.git-graph"             // ← ここに追加しました
+      ]
+    }
+  },
+  "remoteUser": "node"
+}

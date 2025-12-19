@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  angular-dev:
+    build: .
+    ports:
+      - "4200:4200"
+    volumes:
+      - .:/app
+      - /app/node_modules # コンテナ側の node_modules を Mac 側で上書きしないための設定
